@@ -1,0 +1,5 @@
+// 各模块开关，false:作为Lib组件存在， true:作为application存在
+
+def app = [:]
+app.isAccountApplication = false
+ext.app = app

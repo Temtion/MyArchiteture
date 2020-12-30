@@ -1,0 +1,85 @@
+plugins {
+    id 'com.android.library'
+    id 'kotlin-android'
+}
+
+android {
+    compileSdkVersion rootProject.compileSdkVersion
+
+    defaultConfig {
+        minSdkVersion rootProject.minSdkVersion
+        targetSdkVersion rootProject.targetSdkVersion
+        consumerProguardFiles "consumer-rules.pro"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+
+    publishNonDefault true // 这里的配置是为了去除gradle对library module默认只编译release buildType的限制
+}
+
+dependencies {
+    api fileTree(dir: "libs", include: ['*.jar', '*.aar'])
+    // Architecture Components
+    api "androidx.room:room-runtime:$roomVersion"
+    api "androidx.room:room-ktx:$roomVersion"
+    api "androidx.lifecycle:lifecycle-extensions:$archLifecycleVersion"
+    api "androidx.lifecycle:lifecycle-viewmodel-ktx:$archLifecycleVersion"
+    api "androidx.lifecycle:lifecycle-livedata-ktx:$archLifecycleVersion"
+    api "androidx.navigation:navigation-fragment-ktx:$navigationVersion"
+    api "androidx.navigation:navigation-ui-ktx:$navigationVersion"
+    // Kotlin
+    api "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlinVersion"
+    api "androidx.fragment:fragment-ktx:$fragmentKtxVersion"
+
+    testImplementation 'junit:junit:4.+'
+    androidTestImplementation'androidx.test.ext:junit:1.1.2'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+    api "androidx.test.espresso:espresso-idling-resource:$espressoVersion"
+
+
+    // App dependencies
+
+    api "androidx.constraintlayout:constraintlayout:$constraintLayoutVersion"
+    api "androidx.appcompat:appcompat:$appCompatVersion"
+    api "androidx.cardview:cardview:$cardVersion"
+    api "com.google.android.material:material:$materialVersion"
+    api "androidx.recyclerview:recyclerview:$recyclerViewVersion"
+    api "androidx.annotation:annotation:$androidXAnnotations"
+    api "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutinesVersion"
+    api "com.jakewharton.timber:timber:$timberVersion"
+    api "androidx.legacy:legacy-support-v4:$androidXLegacySupport"
+    api "androidx.room:room-runtime:$roomVersion"
+    api "com.google.code.gson:gson:$gsonVersion"
+
+    // retrofit2
+    api "com.squareup.retrofit2:retrofit:$retrofitVersion"
+    api "com.squareup.retrofit2:converter-gson:$retrofitVersion"
+    api "com.squareup.retrofit2:adapter-rxjava2:$retrofitVersion"
+    // RxJava
+    api "io.reactivex.rxjava2:rxjava:$rxjavaVersion"
+    api "io.reactivex.rxjava2:rxandroid:$rxandroidVersion"
+    // okhttp3 支持4.4需要用3.9.1版本
+    api "com.squareup.okhttp3:logging-interceptor:$okhttpVersion"
+    api "com.squareup.okhttp3:okhttp:$okhttpVersion"
+
+}
