@@ -26,7 +26,7 @@ class MainFragment : Fragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-       // use viewModel
+       // use viewModelb
 //           viewModel.login(LoginReq("123","123")).observe(viewLifecycleOwner,
 //                Observer {
 //
