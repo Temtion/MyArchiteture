@@ -34,7 +34,6 @@ android {
         jvmTarget = '1.8'
     }
 
-    publishNonDefault true // 这里的配置是为了去除gradle对library module默认只编译release buildType的限制
 }
 
 dependencies {
