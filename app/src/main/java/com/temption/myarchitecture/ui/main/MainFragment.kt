@@ -2,16 +2,14 @@ package com.temption.myarchitecture.ui.main
 
 import android.os.Bundle
 import android.view.LayoutInflater
-import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import com.temption.myarchitecture.R
 import com.temption.myarchitecture.databinding.MainFragmentBinding
 import com.temption.myarchitecture.ext.findNavController
 import com.temption.myarchitecture.ext.getViewModelFactory
-import com.temption.myarchitecture.ext.showToolBar
+import kotlin.random.Random
 
 
 class MainFragment : Fragment() {
@@ -37,12 +35,14 @@ class MainFragment : Fragment() {
 //
 //                })
 //
-//            viewModel.testDouBan().observe(viewLifecycleOwner,
-//                Observer {
-//                    it?.let {
-//                    }
-//                }
-//            )
+        val nextBoolean = Random(1).nextBoolean()
+        if (nextBoolean){
+            viewModel.testDouBan().observe(viewLifecycleOwner, {
+                it?.let {
+                    binding.tvResponse.text = it.toString()
+                }
+            })
+        }
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

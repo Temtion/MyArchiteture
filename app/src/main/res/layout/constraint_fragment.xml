@@ -27,13 +27,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_begin="20dp" />
+        app:layout_constraintGuide_begin="10dp" />
 
     <Button
-        android:layout_marginTop="20dp"
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="30dp"
+        android:layout_marginTop="20dp"
         android:background="@color/colorAccent"
         android:padding="0dp"
         android:text="spread"
@@ -58,7 +58,7 @@
     <Button
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
-        android:layout_height="180dp"
+        android:layout_height="100dp"
         android:background="@color/colorAccent"
         android:padding="0dp"
         android:text="spread"
@@ -75,7 +75,7 @@
         app:layout_constraintBottom_toTopOf="@id/button4"
         app:layout_constraintEnd_toStartOf="@+id/guideline2"
         app:layout_constraintStart_toEndOf="@+id/textView"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbarLayout"
         app:layout_constraintVertical_bias="0.3"
         app:layout_constraintVertical_chainStyle="packed" />
 
@@ -94,7 +94,8 @@
         android:id="@+id/iv"
         android:layout_width="80dp"
         android:layout_height="80dp"
-        android:src="@mipmap/ic_launcher"
+        android:scaleType="centerCrop"
+        android:src="@mipmap/play_music_full_screen_bg_7"
         app:layout_constraintBottom_toTopOf="@+id/btn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/guideline2"
@@ -104,14 +105,15 @@
 
     <androidx.constraintlayout.utils.widget.ImageFilterButton
         android:id="@+id/btn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@mipmap/ic_launcher"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:background="@mipmap/play_music_full_screen_bg_7"
+        android:scaleType="centerCrop"
         app:layout_constraintBottom_toTopOf="@+id/guideline"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/guideline2"
         app:layout_constraintTop_toBottomOf="@+id/iv"
-        app:round="15dp" />
+        app:round="40dp" />
 
 
     <androidx.constraintlayout.helper.widget.Flow
@@ -119,6 +121,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         app:constraint_referenced_ids="tvA,tvB,tvC,tvD,tvE,tvF,tvG,tvH,tvI,tvJ,tvK,tvL"
+        app:flow_horizontalAlign="center"
         app:flow_horizontalBias="0"
         app:flow_horizontalGap="15dp"
         app:flow_horizontalStyle="packed"
@@ -255,8 +258,8 @@
         android:textColor="#ffffff"
         android:textSize="16sp" />
     <include
-        app:layout_constraintTop_toTopOf="parent"
         android:id="@+id/toolbarLayout"
-        layout="@layout/tool_bar" />
+        layout="@layout/tool_bar"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
