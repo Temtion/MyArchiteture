@@ -38,9 +38,7 @@ class ConstraintLayoutFragment :Fragment() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
             android.R.id.home -> {
-                if (!findNavController().navigateUp()){
-                    activity?.onBackPressed()
-                }
+                activity?.onBackPressed()
                 true
             }
             else -> super.onOptionsItemSelected(item)

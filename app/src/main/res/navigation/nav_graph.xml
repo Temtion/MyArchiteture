@@ -13,11 +13,20 @@
         <action
             android:id="@+id/action_mainFragment_to_constraintLayoutFragment"
             app:destination="@id/constraintLayoutFragment" />
+            <!--回退后绕过目的fragment-->
+        <action
+            android:id="@+id/action_mainFragment_to_constraintLayoutFragment2"
+            app:destination="@id/constraintLayoutFragment"
+            app:popUpTo="@id/mainFragment"
+            app:popUpToInclusive="true" />
     </fragment>
     <fragment
         android:id="@+id/constraintLayoutFragment"
         android:name="com.temption.myarchitecture.ui.main.ConstraintLayoutFragment"
-        android:label="ConstraintLayoutFragment" />
+        android:label="ConstraintLayoutFragment" >
+
+
+    </fragment>
 
 
 </navigation>
