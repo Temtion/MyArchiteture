@@ -1,5 +1,6 @@
 package com.temption.lib.http
 
+import com.temption.lib.http.intercepter.NetInterceptor
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
@@ -31,6 +32,7 @@ object RetrofitServiceManager {
     private val mDefaultOkHttpClientBuilder: OkHttpClient.Builder by lazy  {
         OkHttpClient.Builder()
             .addInterceptor(HttpLoggingInterceptor())
+            .addInterceptor(NetInterceptor())
             .connectTimeout(
                 DEFAULT_TIME_OUT.toLong(),
                 TimeUnit.SECONDS

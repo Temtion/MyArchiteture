@@ -31,12 +31,6 @@ public class NetInterceptor implements Interceptor {
                 .removeHeader(JSONPARAMS)
                 .addHeader(JSONPARAMS, newHeader)
                 .build();
-        Observable.just("1").map(new Function<String, String>() {
-            @Override
-            public String apply(@io.reactivex.annotations.NonNull String s) throws Exception {
-                return null;
-            }
-        }).subscribe();
 //        LogUtils.e("head:"+newHeader);
         return chain.proceed(request);
     }
