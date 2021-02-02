@@ -7,9 +7,9 @@
 
     <fragment
         android:id="@+id/mainFragment"
-        android:name="com.temption.myarchitecture.ui.main.MainFragment"
+        android:name="com.temption.myarchitecture.logic.main.MainFragment"
         android:label="constraint_fragment"
-        tools:layout="@layout/constraint_fragment">
+        tools:layout="@layout/main_fragment">
         <action
             android:id="@+id/action_mainFragment_to_constraintLayoutFragment"
             app:destination="@id/constraintLayoutFragment" />
@@ -19,14 +19,23 @@
             app:destination="@id/constraintLayoutFragment"
             app:popUpTo="@id/mainFragment"
             app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_mainFragment_to_transformationFragment"
+            app:destination="@id/transformationFragment" />
     </fragment>
+
     <fragment
+        tools:layout="@layout/constraint_fragment"
         android:id="@+id/constraintLayoutFragment"
-        android:name="com.temption.myarchitecture.ui.main.ConstraintLayoutFragment"
+        android:name="com.temption.myarchitecture.logic.main.ConstraintLayoutFragment"
         android:label="ConstraintLayoutFragment" >
-
-
     </fragment>
+
+    <fragment
+        tools:layout="@layout/transformation_fragment"
+        android:id="@+id/transformationFragment"
+        android:name="com.temption.myarchitecture.logic.transformation.TransformationFragment"
+        android:label="TransformationFragment" />
 
 
 </navigation>

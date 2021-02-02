@@ -15,13 +15,13 @@
  */
 package com.temption.myarchitecture
 
-import android.app.Application
 import android.os.Bundle
 import androidx.lifecycle.AbstractSavedStateViewModelFactory
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.savedstate.SavedStateRegistryOwner
-import com.temption.myarchitecture.ui.main.MainViewModel
+import com.temption.myarchitecture.logic.main.MainViewModel
+import com.temption.myarchitecture.logic.transformation.TransformationViewModel
 
 /**
  * Factory for all ViewModels.
@@ -38,8 +38,14 @@ class ViewModelFactory(owner: SavedStateRegistryOwner, defaultArgs: Bundle? = nu
         handle: SavedStateHandle
     ) = with(modelClass) {
         when {
-            isAssignableFrom(MainViewModel::class.java) ->
-                MainViewModel(handle, MyApplication.instance())
+            isAssignableFrom(MainViewModel::class.java) -> MainViewModel(
+                handle,
+                MyApplication.instance()
+            )
+            isAssignableFrom(TransformationViewModel::class.java) -> TransformationViewModel(
+                MyApplication.instance()
+            )
+
             else ->
                 throw IllegalArgumentException("Unknown ViewModel class: ${modelClass.name}")
         }

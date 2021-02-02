@@ -1,5 +1,7 @@
 package com.temption.myarchitecture.ktlearn
 
+import com.temption.myarchitecture.data.Person
+
 /**
  * @Description:
  * @Author:         haoshuaihui
@@ -48,24 +50,11 @@ class Student(private var name: String, private var age: Int) {
 }
 
 fun main(args: Array<String>) {
-//    testList()
+    val person = Person("男", 28, false)
+    val person2 = Person("男", 28, false)
 
-    val array = Array(100_000) { i -> i+1 }
-
-    val intArrayResult = IntArray(100_000) { i -> i+1 }
-
-    val list = List(100_000) { i -> i + 1 }
-
-    println(list.sumBy { i -> i + 1  })
-
-    println(list.sum())
-
-
-//    averageArray(array)
-//
-//    averageIntArray(intArrayResult)
-//
-//    averageList(list)
+    print(person == person2)
+    println(person.equals(person2))
 
 }
 

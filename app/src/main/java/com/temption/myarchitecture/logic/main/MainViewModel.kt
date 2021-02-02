@@ -1,4 +1,4 @@
-package com.temption.myarchitecture.ui.main
+package com.temption.myarchitecture.logic.main
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel

@@ -1,4 +1,4 @@
-package com.temption.myarchitecture.ui.main
+package com.temption.myarchitecture.logic.main
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -9,6 +9,7 @@ import androidx.fragment.app.viewModels
 import com.temption.myarchitecture.databinding.MainFragmentBinding
 import com.temption.myarchitecture.ext.findNavController
 import com.temption.myarchitecture.ext.getViewModelFactory
+import com.temption.myarchitecture.ext.showToast
 import kotlin.random.Random
 
 
@@ -40,6 +41,7 @@ class MainFragment : Fragment() {
             viewModel.testDouBan().observe(viewLifecycleOwner, {
                 it?.let {
                     binding.tvResponse.text = it.toString()
+                    activity?.showToast(1)
                 }
             })
         }
@@ -50,6 +52,11 @@ class MainFragment : Fragment() {
         binding.btnConstraintLayout.setOnClickListener {
             val action =
                 MainFragmentDirections.actionMainFragmentToConstraintLayoutFragment()
+            findNavController().navigate(action)
+        }
+
+        binding.btnTransformation.setOnClickListener {
+            val action = MainFragmentDirections.actionMainFragmentToTransformationFragment()
             findNavController().navigate(action)
         }
     }

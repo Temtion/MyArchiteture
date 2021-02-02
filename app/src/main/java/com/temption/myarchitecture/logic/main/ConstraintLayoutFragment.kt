@@ -1,4 +1,4 @@
-package com.temption.myarchitecture.ui.main
+package com.temption.myarchitecture.logic.main
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,7 +7,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.temption.myarchitecture.databinding.ConstraintFragmentBinding
-import com.temption.myarchitecture.ext.findNavController
 import com.temption.myarchitecture.ext.showToolBar
 
 /**

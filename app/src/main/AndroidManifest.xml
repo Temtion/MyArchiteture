@@ -14,7 +14,7 @@
         android:theme="@style/Base.AppTheme">
 
 
-        <activity android:name=".MainActivity">
+        <activity android:name=".logic.main.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

@@ -1,4 +1,4 @@
-package com.temption.myarchitecture
+package com.temption.myarchitecture.logic.main
 
 import android.os.Bundle
 import android.view.MenuItem
@@ -6,9 +6,8 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.navigateUp
+import com.temption.myarchitecture.R
 import com.temption.myarchitecture.databinding.MainActivityBinding
-import com.temption.myarchitecture.ext.showToolBar
 
 
 class MainActivity : AppCompatActivity() {
