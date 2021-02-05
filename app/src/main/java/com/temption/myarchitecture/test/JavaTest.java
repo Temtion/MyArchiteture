@@ -1,18 +1,15 @@
-package com.temption.myarchitecture.ext;
-
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
+package com.temption.myarchitecture.test;
 
 /**
  * @Description:
  * @Author: haoshuaihui
  * @CreateDate: 2021/2/1 17:09
  */
-public class Test {
+public class JavaTest {
     public static final String TAG = "TestS";
 
-    public static Test getInstance() {
-        return new Test();
+    public static JavaTest getInstance() {
+        return new JavaTest();
     }
 
     public void test() {

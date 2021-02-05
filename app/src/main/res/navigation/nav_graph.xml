@@ -22,6 +22,12 @@
         <action
             android:id="@+id/action_mainFragment_to_transformationFragment"
             app:destination="@id/transformationFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_webSocketFragment"
+            app:destination="@id/webSocketFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_coordinatorLayoutFragment"
+            app:destination="@id/coordinatorLayoutFragment" />
     </fragment>
 
     <fragment
@@ -36,6 +42,16 @@
         android:id="@+id/transformationFragment"
         android:name="com.temption.myarchitecture.logic.transformation.TransformationFragment"
         android:label="TransformationFragment" />
+
+    <fragment
+        android:id="@+id/webSocketFragment"
+        android:name="com.temption.myarchitecture.logic.websocket.WebSocketFragment"
+        android:label="web_socket_fragment"
+        tools:layout="@layout/web_socket_fragment" />
+    <fragment
+        android:id="@+id/coordinatorLayoutFragment"
+        android:label="coordinator_layout_fragment"
+        tools:layout="@layout/coordinator_layout_fragment" />
 
 
 </navigation>

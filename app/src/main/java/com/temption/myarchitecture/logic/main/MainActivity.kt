@@ -24,6 +24,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
         val navHostFragment = supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
         navController = navHostFragment.navController
+        navController.setGraph(R.navigation.nav_graph)
         appBarConfiguration =
                 AppBarConfiguration.Builder(navController.graph)
                         .build()

@@ -80,5 +80,7 @@ dependencies {
     // okhttp3 支持4.4需要用3.9.1版本
     api "com.squareup.okhttp3:logging-interceptor:$okhttpVersion"
     api "com.squareup.okhttp3:okhttp:$okhttpVersion"
+    //util
+    api 'com.blankj:utilcodex:1.26.0'
 
 }

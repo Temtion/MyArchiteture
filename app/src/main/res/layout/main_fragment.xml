@@ -16,11 +16,11 @@
         android:layout_height="match_parent" />
 
     <Button
-        app:layout_constraintBottom_toTopOf="@id/btnTransformation"
         android:id="@+id/btnConstraintLayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="constraintLayout"
+        app:layout_constraintBottom_toTopOf="@id/btnTransformation"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintVertical_chainStyle="spread"
@@ -31,10 +31,36 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="TRANSFORMATION"
+        app:layout_constraintBottom_toTopOf="@id/btnCoordinator"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btnTransformation"
+        app:layout_constraintVertical_chainStyle="spread">
+
+    </Button>
+
+    <Button
+        android:id="@+id/btnCoordinator"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        app:layout_constraintBottom_toTopOf="@id/btnSocket"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btnTransformation"
+        app:layout_constraintVertical_chainStyle="spread">
+
+    </Button>
+
+    <Button
+        android:id="@+id/btnSocket"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="WEBSOCKET"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/btnConstraintLayout"
+        app:layout_constraintTop_toBottomOf="@id/btnCoordinator"
         app:layout_constraintVertical_chainStyle="spread">
 
     </Button>

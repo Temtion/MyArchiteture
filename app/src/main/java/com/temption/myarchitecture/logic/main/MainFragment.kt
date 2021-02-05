@@ -40,8 +40,7 @@ class MainFragment : Fragment() {
         if (nextBoolean){
             viewModel.testDouBan().observe(viewLifecycleOwner, {
                 it?.let {
-                    binding.tvResponse.text = it.toString()
-                    activity?.showToast(1)
+                    activity?.showToast(it.topics.toString())
                 }
             })
         }
@@ -59,6 +58,14 @@ class MainFragment : Fragment() {
             val action = MainFragmentDirections.actionMainFragmentToTransformationFragment()
             findNavController().navigate(action)
         }
+
+        binding.btnSocket.setOnClickListener {
+            findNavController().navigate(MainFragmentDirections.actionMainFragmentToWebSocketFragment())
+        }
+
+        binding.btnCoordinator.setOnClickListener {
+        }
+
     }
 
 

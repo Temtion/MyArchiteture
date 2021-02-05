@@ -22,6 +22,7 @@ import androidx.lifecycle.ViewModel
 import androidx.savedstate.SavedStateRegistryOwner
 import com.temption.myarchitecture.logic.main.MainViewModel
 import com.temption.myarchitecture.logic.transformation.TransformationViewModel
+import com.temption.myarchitecture.logic.websocket.WebSocketViewModel
 
 /**
  * Factory for all ViewModels.
@@ -45,7 +46,9 @@ class ViewModelFactory(owner: SavedStateRegistryOwner, defaultArgs: Bundle? = nu
             isAssignableFrom(TransformationViewModel::class.java) -> TransformationViewModel(
                 MyApplication.instance()
             )
-
+            isAssignableFrom(WebSocketViewModel::class.java) -> WebSocketViewModel(
+                MyApplication.instance()
+            )
             else ->
                 throw IllegalArgumentException("Unknown ViewModel class: ${modelClass.name}")
         }

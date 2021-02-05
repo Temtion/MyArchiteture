@@ -1,4 +1,4 @@
-package com.temption.myarchitecture.ktlearn
+package com.temption.myarchitecture.test
 
 import com.temption.myarchitecture.data.Person
 

@@ -2,6 +2,7 @@ package com.temption.myarchitecture.ext;
 
 import android.content.Context
 import android.content.res.Resources
+import android.util.Log
 import android.util.TypedValue
 import android.widget.Toast
 import java.time.Duration
@@ -21,4 +22,11 @@ val Float.dp
 fun Context.showToast(stringResId: Int,duration: Int = Toast.LENGTH_SHORT) {
     Toast.makeText(this, stringResId, duration).show()
 }
+fun Context.showToast(content:String,duration: Int = Toast.LENGTH_SHORT) {
+    Toast.makeText(this, content, duration).show()
+}
+
+
+
+
 
