@@ -2,10 +2,8 @@ package com.temption.myarchitecture.ext;
 
 import android.content.Context
 import android.content.res.Resources
-import android.util.Log
 import android.util.TypedValue
 import android.widget.Toast
-import java.time.Duration
 
 /**
  * @Description:
