@@ -28,6 +28,9 @@
         <action
             android:id="@+id/action_mainFragment_to_coordinatorLayoutFragment"
             app:destination="@id/coordinatorLayoutFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_rxFragment"
+            app:destination="@id/rxFragment" />
     </fragment>
 
     <fragment
@@ -52,6 +55,11 @@
         android:id="@+id/coordinatorLayoutFragment"
         android:label="coordinator_layout_fragment"
         tools:layout="@layout/coordinator_layout_fragment" />
+    <fragment
+        android:id="@+id/rxFragment"
+        android:name="com.temption.myarchitecture.logic.rx.RxFragment"
+        android:label="rx_fragment"
+        tools:layout="@layout/rx_fragment" />
 
 
 </navigation>

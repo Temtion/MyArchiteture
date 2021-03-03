@@ -1,6 +1,9 @@
 package com.temption.myarchitecture.test
 
+import androidx.lifecycle.lifecycleScope
 import com.temption.myarchitecture.data.Person
+import kotlinx.coroutines.*
+import okhttp3.internal.wait
 
 /**
  * @Description:
@@ -50,12 +53,32 @@ class Student(private var name: String, private var age: Int) {
 }
 
 fun main(args: Array<String>) {
-    val person = Person("男", 28, false)
-    val person2 = Person("男", 28, false)
+    println("main")
+    runBlocking {
+        val async = async {
+            getWebTime()
+        }
+        val result = async.await()
+        //deal result
+        val result2 = getWebTime()
+        //deal result
 
-    print(person == person2)
-    println(person.equals(person2))
 
+        launch {
+
+
+        }
+        coroutineScope {
+
+        }
+        supervisorScope {
+
+        }
+    }
+}
+
+private suspend fun getWebTime(): Long = withContext(Dispatchers.IO) {
+    3
 }
 
 private fun averageArray(array: Array<Int>) {

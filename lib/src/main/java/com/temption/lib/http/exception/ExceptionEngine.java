@@ -39,6 +39,12 @@ public class ExceptionEngine {
             e.printStackTrace();
             ex.setMessage("解析失败，请稍后再试");
             return ex;
+        } else if (e instanceof ServerException) {
+            //服务器返回的错误
+            ServerException serverExc = (ServerException) e;
+            ex = new ApiException(serverExc, serverExc.getStatus());
+            ex.setMessage(serverExc.getMessage());
+            return ex;
         } else if (e instanceof ConnectException) {//连接网络错误
             ex = new ApiException(e, CONNECT_ERROR);
             ex.setMessage("网络连接错误，请稍后再试");

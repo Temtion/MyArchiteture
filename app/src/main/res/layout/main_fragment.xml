@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
-    android:gravity="center"
     android:orientation="vertical"
+    android:gravity="center_horizontal"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".logic.main.MainFragment">
@@ -13,29 +12,19 @@
     <TextView
         android:id="@+id/tvResponse"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="20dp" />
 
     <Button
         android:id="@+id/btnConstraintLayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="constraintLayout"
-        app:layout_constraintBottom_toTopOf="@id/btnTransformation"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintVertical_chainStyle="spread"
-        app:layout_constraintStart_toStartOf="parent" />
+        android:text="constraintLayout" />
 
     <Button
         android:id="@+id/btnTransformation"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="TRANSFORMATION"
-        app:layout_constraintBottom_toTopOf="@id/btnCoordinator"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/btnTransformation"
-        app:layout_constraintVertical_chainStyle="spread">
+        android:text="TRANSFORMATION">
 
     </Button>
 
@@ -43,12 +32,7 @@
         android:id="@+id/btnCoordinator"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text=""
-        app:layout_constraintBottom_toTopOf="@id/btnSocket"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/btnTransformation"
-        app:layout_constraintVertical_chainStyle="spread">
+        android:text="COORDINATOR">
 
     </Button>
 
@@ -56,14 +40,12 @@
         android:id="@+id/btnSocket"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="WEBSOCKET"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/btnCoordinator"
-        app:layout_constraintVertical_chainStyle="spread">
+        android:text="WEBSOCKET"/>
 
-    </Button>
+    <Button
+        android:id="@+id/btnRxOperator"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="RX_OPERATOR"/>
 
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>

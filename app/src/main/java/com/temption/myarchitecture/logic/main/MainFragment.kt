@@ -10,6 +10,11 @@ import com.temption.myarchitecture.databinding.MainFragmentBinding
 import com.temption.myarchitecture.ext.findNavController
 import com.temption.myarchitecture.ext.getViewModelFactory
 import com.temption.myarchitecture.ext.showToast
+import com.temption.myarchitecture.server.dto.LoginReq
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.async
+import kotlinx.coroutines.launch
 import kotlin.random.Random
 
 
@@ -31,18 +36,24 @@ class MainFragment : Fragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         // use viewModelb
-//           viewModel.login(LoginReq("123","123")).observe(viewLifecycleOwner,
-//                Observer {
+        viewModel.login(LoginReq("123", "123")).observe(viewLifecycleOwner){
+
+
+        }
 //
-//                })
-//
+
         val nextBoolean = Random(1).nextBoolean()
-        if (nextBoolean){
+        if (nextBoolean) {
             viewModel.testDouBan().observe(viewLifecycleOwner, {
                 it?.let {
                     activity?.showToast(it.topics.toString())
                 }
             })
+        }
+        GlobalScope.launch(Dispatchers.Main) {
+            async {
+
+            }
         }
     }
 
@@ -63,9 +74,9 @@ class MainFragment : Fragment() {
             findNavController().navigate(MainFragmentDirections.actionMainFragmentToWebSocketFragment())
         }
 
-        binding.btnCoordinator.setOnClickListener {
+        binding.btnRxOperator.setOnClickListener {
+            findNavController().navigate(MainFragmentDirections.actionMainFragmentToRxFragment())
         }
-
     }
 
 

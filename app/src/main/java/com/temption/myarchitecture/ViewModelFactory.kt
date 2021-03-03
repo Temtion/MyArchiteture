@@ -21,6 +21,7 @@ import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.savedstate.SavedStateRegistryOwner
 import com.temption.myarchitecture.logic.main.MainViewModel
+import com.temption.myarchitecture.logic.rx.RxViewModel
 import com.temption.myarchitecture.logic.transformation.TransformationViewModel
 import com.temption.myarchitecture.logic.websocket.WebSocketViewModel
 
@@ -49,6 +50,7 @@ class ViewModelFactory(owner: SavedStateRegistryOwner, defaultArgs: Bundle? = nu
             isAssignableFrom(WebSocketViewModel::class.java) -> WebSocketViewModel(
                 MyApplication.instance()
             )
+            isAssignableFrom(RxViewModel::class.java) -> RxViewModel(MyApplication.instance())
             else ->
                 throw IllegalArgumentException("Unknown ViewModel class: ${modelClass.name}")
         }

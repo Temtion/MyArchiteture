@@ -1,7 +1,7 @@
 package com.temption.myarchitecture.server.api
 
-import com.temption.lib.http.serializeToMap
 import com.temption.lib.http.RetrofitServiceManager
+import com.temption.lib.http.serializeToMap
 import com.temption.myarchitecture.server.dto.LoginReq
 import com.temption.myarchitecture.server.dto.LoginResp
 import com.yf.library.base.server.dto.BaseResp

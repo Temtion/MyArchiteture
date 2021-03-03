@@ -16,7 +16,7 @@ suspend fun <T> handleResp(
     action: suspend () -> BaseResp<T>
 ): BaseResp<T> {
     try {
-        val response = action()
+        val response = action.invoke()
         if (response.code == SUCCESS) {
             return response
             //逻辑异常
