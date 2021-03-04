@@ -1,6 +1,11 @@
 package com.temption.myarchitecture.logic.transformation
 
-import androidx.lifecycle.*
+import androidx.lifecycle.AndroidViewModel
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.distinctUntilChanged
+import androidx.lifecycle.map
+import androidx.lifecycle.switchMap
 import com.temption.myarchitecture.MyApplication
 import com.temption.myarchitecture.data.Person
 
@@ -21,6 +26,9 @@ class TransformationViewModel(app: MyApplication) : AndroidViewModel(app) {
         rawLiveData.value = Person("男", 28, false)
     }
 
+    val allPerson:LiveData<Person> get() {
+         return rawLiveData
+    }
     /**
      * 关注联系使用map
      */

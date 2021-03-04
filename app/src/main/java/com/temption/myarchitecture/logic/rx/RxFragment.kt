@@ -4,6 +4,8 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
+import androidx.core.widget.addTextChangedListener
 import androidx.core.widget.doAfterTextChanged
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
@@ -38,6 +40,9 @@ class RxFragment : Fragment() {
         super.onActivityCreated(savedInstanceState)
         subscribe()
         testFlowable()
+        TextView(requireContext()).addTextChangedListener{
+
+        }
     }
 
     private fun testFlowable() {
@@ -45,8 +50,10 @@ class RxFragment : Fragment() {
         Observable.just(123).toFlowable(BackpressureStrategy.BUFFER).subscribe()
         Flowable.just(123).subscribe()
 
-
-
+        val str:String? = "Dsadsa"
+        val lenth = str?.length?:{
+            -1
+        }
 
 
 
